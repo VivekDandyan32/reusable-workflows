@@ -3,6 +3,10 @@ name: Reusable deployment workflow
 on: 
   workflow_call:
     inputs:
+      ENVIRONMENT: 
+        description: "deployment env prod stage"
+        required: true
+        type: string
       NAMESPACE:
         description: "K8S NAMESPACE"
         required: true
@@ -19,6 +23,7 @@ on:
 jobs:  
   depoy-with-kubectl:
     name: deployment job
+    environment: ${{ inputs.ENVIRONMENT }}
     env:
       NAMESPACE: $${{ inputs.NAMESPACE }}
     runs-on: github-actions-scaleset-config-demo
