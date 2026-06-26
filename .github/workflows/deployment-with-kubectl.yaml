@@ -21,7 +21,7 @@ jobs:
     name: deployment job
     environment: ${{ inputs.ENVIRONMENT }}
     env:
-      NAMESPACE: $${{ vars.NAMESPACE }}
+      NAMESPACE: ${{ vars.NAMESPACE }}
     runs-on: github-actions-scaleset-config-demo
     steps:
       - name: Checkout Repo
