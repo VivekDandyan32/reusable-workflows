@@ -36,8 +36,8 @@ jobs:
 
       - name: Configure kubeconfig
         run: | 
-          # mkdir -p ~/.kube
-          # echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
+        # mkdir -p ~/.kube
+        # echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
           echo "===== kubeconfig ====="
           kubectl config current-context
           kubectl config view --minify
