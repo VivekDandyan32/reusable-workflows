@@ -7,10 +7,6 @@ on:
         description: "deployment env prod stage"
         required: true
         type: string
-      NAMESPACE:
-        description: "K8S NAMESPACE"
-        required: true
-        type: string
       IMAGE_NAME:
         description: "DOCKER IMAGE WITHOUT TAG"
         required: true
@@ -25,7 +21,7 @@ jobs:
     name: deployment job
     environment: ${{ inputs.ENVIRONMENT }}
     env:
-      NAMESPACE: $${{ inputs.NAMESPACE }}
+      NAMESPACE: $${{ vars.NAMESPACE }}
     runs-on: github-actions-scaleset-config-demo
     steps:
       - name: Checkout Repo
