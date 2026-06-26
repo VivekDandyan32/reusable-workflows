@@ -48,7 +48,7 @@ jobs:
         run: |
           IMAGE_TAGS="${{ github.run.id }}-${GITHUB_SHA:0:7}"
           export IMAGE="${{ inputs.IMAGE_NAME }}:${IMAGE_TAGS}"
-          yw e '.spec.template.spec.containers[0].image = strenv(IMAGE)' manifest/deployment.yaml -i
+          yq e '.spec.template.spec.containers[0].image = strenv(IMAGE)' manifest/deployment.yaml -i
           cat manifest/deployment.yaml
 
       - name: create namespace if not exist
