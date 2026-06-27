@@ -38,7 +38,7 @@ jobs:
           mkdir -p ~/.kube
           echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
           kubectl version
-          kubectl get nodes 
+          kubectl get nodes  
 
            
               
