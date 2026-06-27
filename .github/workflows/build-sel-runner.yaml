@@ -5,7 +5,7 @@ on:
       - "**"
     paths:
       - selenium-runner/**
-      - .github/workflows/build-selenium-runner.yml
+      - .github/workflows/build-sel-runner.yaml
 permissions:
   contents: read
   packages: write
@@ -34,7 +34,7 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        
+
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
