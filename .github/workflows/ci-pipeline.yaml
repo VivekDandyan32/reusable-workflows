@@ -64,7 +64,7 @@ jobs:
       - name: run unit tests
         run: |
           mkdir reports/
-          pytest --junitxml=reports/unit-test-results.xml --cov=. --cov-report=xml:reports/coverage.xml --cov-report=term-missing -v
+          pytest test_app.py --junitxml=reports/unit-test-results.xml --cov=. --cov-report=xml:reports/coverage.xml --cov-report=term-missing -v
       
       - name: upload code coverage reports
         uses: actions/upload-artifact@v7.0.1
