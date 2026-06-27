@@ -33,8 +33,14 @@ jobs:
           chmod +x ./kubectl
           sudo mv ./kubectl /usr/local/bin/kubectl
           kubectl version --client
+      - name: Configure Kubeconfig
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
+          kubectl version
+          kubectl get nodes 
 
-     
+           
               
       
 # yq - update item in yaml file - tool yaml querry
