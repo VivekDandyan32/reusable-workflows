@@ -63,6 +63,6 @@ jobs:
 
       - name: update image name in deployment yaml file  
         run: |    
-          kubectl apply -f manifest/ -n $NAMESPACE
+          kubectl apply -f manifests/ -n $NAMESPACE
           kubectl get all -n $NAMESPACE
 
