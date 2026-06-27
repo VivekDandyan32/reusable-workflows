@@ -5,6 +5,7 @@ USER root
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     wget \
+    curl \
     gnupg \
     python3 \
     python3-venv \
@@ -12,10 +13,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     fonts-liberation \
     libnss3 \
     libxss1 \
-    libasound2 \
+    libasound2t64 \
+    libatk-bridge2.0-0 \
     libgtk-3-0 \
     libgbm1 \
-  && rm -rf /var/lib/apt/lists/*
+    libu2f-udev \
+    xdg-utils \
+ && rm -rf /var/lib/apt/lists/*
 
 # Install Google Chrome (APT)
 RUN wget -qO- https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg \
